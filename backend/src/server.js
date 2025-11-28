@@ -3,7 +3,6 @@ import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/auth.route.js";
 import chatRoutes from "./routes/chat.route.js"
 import dotenv from "dotenv";
-import rateLimiter from "./middleware/rateLimiter.js";
 import cookieParser from 'cookie-parser'
 import userRoutes from './routes/user.route.js'
 import cors from 'cors'
@@ -21,7 +20,6 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
-app.use(rateLimiter)
 app.use(cookieParser())
 
 app.use("/api/auth", authRoutes);
