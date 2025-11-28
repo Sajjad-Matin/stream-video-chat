@@ -16,12 +16,10 @@ const PORT = process.env.PORT;
 const __dirname = path.resolve();
 
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://stream-video-chat.vercel.app'
-  ],
+  origin: 'https://stream-video-chat.vercel.app',
   credentials: true
 }));
+
 app.use(express.json());
 app.use(cookieParser())
 
