@@ -60,6 +60,7 @@ export async function signup(req, res) {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
+      secure: true
     });
 
     return res.status(201).send({
