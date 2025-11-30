@@ -34,8 +34,7 @@ export async function signup(req, res) {
       fullName,
       email,
       password,
-      profilePic
-      : randomAvatar,
+      profilePic: randomAvatar,
     });
 
     try {
@@ -59,7 +58,7 @@ export async function signup(req, res) {
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "none",
       secure: true
     });
 
