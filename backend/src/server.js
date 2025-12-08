@@ -28,6 +28,15 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes)
 
+app.get("/debug-env", (req, res) => {
+  res.json({
+    STREAM_API_KEY: process.env.STREAM_API_KEY,
+    STREAM_API_SECRET: process.env.STREAM_API_SECRET ? "loaded" : "missing",
+    NODE_ENV: process.env.NODE_ENV
+  });
+});
+
+
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
